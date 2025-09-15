@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MetricSystem</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RSm8cpc767664c39f0b14798e2178b5e672f0b7879e6584c3565c5d03833d7331908a" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Metric System Converter</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" asp-controller="Conversion" asp-action="Fahrenheit">Fahrenheit</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Inch</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Pint</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Yard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+                    </ul>
+                    <div class="d-flex ms-auto align-items-center gap-2">
+                        <a class="nav-link d-flex align-items-center" href="#">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>
+                            Calculations <span class="badge bg-primary ms-1">2</span>
+                        </a>
+                        <a href="/cart" class="btn btn-outline-primary d-flex align-items-center">
+                            <span class="fas fa-shopping-cart"></span>
+                            &nbsp;Cart&nbsp;
+                            <span class="badge bg-primary">2</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mt-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bt8rE7L7QY7xN63e7bC6u8d5b12356w8f0d5e6727284b89d44323a6678c1" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
